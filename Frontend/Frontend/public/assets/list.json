@@ -1,0 +1,106 @@
+[
+    {
+        "id": 1,
+        "name": "Children's Fairy Tales",
+        "title": "Classic fairy tales for young readers",
+        "price": 0,
+        "category": "Free",
+        "genre": "Fairy Tales",
+        "image": "https://m.media-amazon.com/images/I/81p+xe8cbnL._AC_UY327_FMwebp_QL65_.jpg",
+        "url": "https://www.gutenberg.org/files/14916/14916-h/14916-h.htm"
+    },
+    {
+        "id": 2,
+        "name": "The Jungle Book",
+        "title": "Classic tales of Mowgli and his adventures",
+        "price": 0,
+        "category": "Free",
+        "genre": "Fairy Tales",
+        "image": "https://m.media-amazon.com/images/I/71p3xH91lfL._AC_UY327_FMwebp_QL65_.jpg",
+        "url": "https://www.gutenberg.org/files/236/236-h/236-h.htm"
+    },
+    {
+        "id": 3,
+        "name": "The Time Machine",
+        "title": "A classic sci-fi novel by H.G. Wells",
+        "price": 0,
+        "category": "Free",
+        "genre": "Science Fiction",
+        "image": "https://m.media-amazon.com/images/I/71lC7YxlNhL._AC_UY327_FMwebp_QL65_.jpg",
+        "url": "https://www.gutenberg.org/files/35/35-h/35-h.htm"
+    },
+    {
+        "id": 4,
+        "name": "A Christmas Carol",
+        "title": "The famous novel by Charles Dickens",
+        "price": 0,
+        "category": "Free",
+        "genre": "Classic Literature",
+        "image": "https://m.media-amazon.com/images/I/81yOJqJBHZL._AC_UY327_FMwebp_QL65_.jpg",
+        "url": "https://www.gutenberg.org/files/46/46-h/46-h.htm"
+    },
+    {
+        "id": 5,
+        "name": "Sports Book",
+        "title": "An inspiring guide to the world of sports",
+        "price": 50,
+        "category": "Sports",
+        "image": "https://i.pinimg.com/736x/e3/bc/52/e3bc5233fc877d39998dd1c72ae5b7fa.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Coding Book",
+        "title": "Learn coding from scratch",
+        "price": 100,
+        "category": "Code",
+        "image": "https://i.pinimg.com/736x/e3/bc/52/e3bc5233fc877d39998dd1c72ae5b7fa.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Food Book",
+        "title": "Explore delicious recipes from around the world",
+        "price": 120,
+        "category": "Food",
+        "image": "https://i.pinimg.com/736x/e3/bc/52/e3bc5233fc877d39998dd1c72ae5b7fa.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Historical Book",
+        "title": "A deep dive into history's greatest events",
+        "price": 150,
+        "category": "History",
+        "image": "https://i.pinimg.com/736x/e3/bc/52/e3bc5233fc877d39998dd1c72ae5b7fa.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Autobiography Book",
+        "title": "A journey through the life of a great personality",
+        "price": 200,
+        "category": "AutoBiography",
+        "image": "https://i.pinimg.com/736x/e3/bc/52/e3bc5233fc877d39998dd1c72ae5b7fa.jpg"
+    },
+    {
+        "id": 10,
+        "name": "Religious Book",
+        "title": "Spiritual teachings and insights",
+        "price": 250,
+        "category": "Religious",
+        "image": "https://i.pinimg.com/736x/e3/bc/52/e3bc5233fc877d39998dd1c72ae5b7fa.jpg"
+    },
+    {
+        "id": 11,
+        "name": "Business Book",
+        "title": "Essential business strategies for success",
+        "price": 300,
+        "category": "Business",
+        "image": "https://i.pinimg.com/736x/e3/bc/52/e3bc5233fc877d39998dd1c72ae5b7fa.jpg"
+    },
+    {
+        "id": 12,
+        "name": "Psychology Book",
+        "title": "Understanding the human mind",
+        "price": 350,
+        "category": "Psychology",
+        "image": "https://i.pinimg.com/736x/e3/bc/52/e3bc5233fc877d39998dd1c72ae5b7fa.jpg"
+    }
+]

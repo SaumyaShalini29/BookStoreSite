@@ -1,0 +1,33 @@
+{
+  "name": "bookstore",
+  "version": "1.0.0",
+  "description": "mern project",
+  "main": "index.js",
+  "type": "module",
+"scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "start": "nodemon index.js",
+  "server": "nodemon index.js",
+  "client": "npm start --prefix ../Frontend/Frontend",
+
+  "dev": "concurrently \"npm run server\" \"npm run client\""
+},
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SaumyaShalini29/BookStoreApp.git"
+  },
+  "author": "Saumya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SaumyaShalini29/BookStoreApp/issues"
+  },
+  "homepage": "https://github.com/SaumyaShalini29/BookStoreApp#readme",
+  "dependencies": {
+    "concurrently": "^9.1.2",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.12.1",
+    "nodemon": "^3.1.9"
+  }
+}

@@ -32,7 +32,7 @@ const Banner = () => {
 
         {/* Button */}
         <button className="mt-6 bg-blue-500 text-white px-6 py-2 rounded-md shadow-lg hover:bg-blue-600 transition">
-          Subscribe
+          Get Started
         </button>
       </div>
 
