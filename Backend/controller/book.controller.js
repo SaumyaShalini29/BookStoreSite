@@ -1,28 +1,28 @@
-import Book from "../model/book.model.js"; // Ensure correct model import
+import Book from "../model/book.model.js"; 
+import jwt from "jsonwebtoken";
 
-export const getAllBooks = async (req, res) => {
+export const getBook = async (req, res) => {
   try {
-    const books = await Book.find(); // Fetch all books
+    let books;
+    const token = req.headers.authorization?.split(" ")[1]; // ✅ Extract token
+
+    if (token) {
+      try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        console.log("✅ Authenticated User:", decoded);
+        books = await Book.find(); // ✅ Return all books (Free + Paid)
+      } catch (error) {
+        console.error("❌ Invalid Token:", error.message);
+        return res.status(401).json({ message: "Invalid token. Please login again." });
+      }
+    } else {
+      console.log("🔒 No Token: Returning only Free books.");
+      books = await Book.find({ category: "Free" }); // ✅ Return only Free books
+    }
+
     res.status(200).json(books);
   } catch (error) {
-    res.status(500).json({ message: "Error fetching books" });
-  }
-};
-
-export const getFreeBooks = async (req, res) => {
-  try {
-    const freeBooks = await Book.find({ isPaid: false }); // Fetch only free books
-    res.status(200).json(freeBooks);
-  } catch (error) {
-    res.status(500).json({ message: "Error fetching free books" });
-  }
-};
-
-export const getPaidBooks = async (req, res) => {
-  try {
-    const paidBooks = await Book.find({ isPaid: true }); // Fetch only paid books
-    res.status(200).json(paidBooks);
-  } catch (error) {
-    res.status(500).json({ message: "Error fetching paid books" });
+    console.error("❌ Error fetching books:", error);
+    res.status(500).json({ message: "Error fetching books", error: error.message });
   }
 };

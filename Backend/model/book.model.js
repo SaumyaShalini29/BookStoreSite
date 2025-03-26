@@ -1,5 +1,6 @@
-import mongoose from "mongoose";
+import mongoose from "mongoose"; 
 
+// Book Schema
 const bookSchema = new mongoose.Schema({
     name: { type: String, required: true },
     price: { type: Number, required: true },
@@ -9,11 +10,4 @@ const bookSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 const Book = mongoose.model("Book", bookSchema);
-const userSchema = new mongoose.Schema({
-    name: { type: String, required: true }, // Ensure it's 'name' not 'fullname'
-    email: { type: String, required: true, unique: true },
-    password: { type: String, required: true },
-  }, { timestamps: true });
-
-const User = mongoose.model("User", userSchema);
-export default {Book,User};
+export default Book; // ✅ Correct Export

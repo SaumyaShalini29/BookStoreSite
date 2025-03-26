@@ -1,22 +1,11 @@
 import mongoose from "mongoose";
 
+// User Schema
 const userSchema = new mongoose.Schema({
-    fullName: {
-        type: String,
-        required: true
-    },
-    email: {
-        type: String,
-        required: true,  // Fixed typo
-        unique: true
-    },
-    password: {
-        type: String,
-        required: true
-    }
-}, { timestamps: true }); // Auto-adds createdAt & updatedAt fields
+    fullname: { type: String, required: true }, // Ensure it's 'name' not 'fullname'
+    email: { type: String, required: true, unique: true },
+    password: { type: String, required: true },
+}, { timestamps: true });
 
-// Prevent model overwriting
-const User = mongoose.models.User || mongoose.model("User", userSchema);
-
-export default User;
+const User = mongoose.model("User", userSchema);
+export default User; // ✅ Correct Export

@@ -4,53 +4,46 @@ import dotenv from "dotenv";
 import cors from "cors";
 import bookRoute from "./route/book.route.js";
 import userRoute from "./route/user.route.js";
-
+ //import Contact from "../Frontend/src/Contact/Contact.jsx";
 dotenv.config();
-const app = express();
 
-const PORT = process.env.PORT || 5000;
+const app = express();
+const PORT = process.env.PORT ;
 const URI = process.env.MongoDBURI;
 
-if (!URI) {
-  console.error("❌ MongoDB URI is missing in the .env file!");
-  process.exit(1);
-}
+// ✅ Middleware
+app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(express.json()); // ✅ Ensure JSON body parsing
 
-// Enable CORS & JSON parsing
-app.use(cors());
-app.use(express.json());
-
-// Set Mongoose settings to avoid warnings
-mongoose.set("strictQuery", false);
-
-// Connect to MongoDB
+// ✅ Connect to MongoDB
 const connectDB = async () => {
   try {
-    await mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true });
+    await mongoose.connect(URI);
     console.log("✅ Connected to MongoDB");
   } catch (error) {
     console.error("❌ MongoDB Connection Error:", error.message);
-    process.exit(1); // Exit process if connection fails
+    process.exit(1); // Exit if unable to connect
   }
 };
-
 connectDB();
 
-// Handle MongoDB connection errors
-mongoose.connection.on("error", (err) => {
-  console.error("❌ MongoDB connection error:", err);
-});
-
-// Health check route to test if the server is running
-app.get("/health", (req, res) => {
-  res.status(200).json({ message: "✅ Server is running!" });
-});
-
-// Define Routes
+// ✅ Define Routes
 app.use("/book", bookRoute);
 app.use("/user", userRoute);
 
-// Start Server
+// ✅ Contact API Route
+//app.post("/api/contact", (req, res) => {
+  //const { name, email, message } = req.body;
+
+ // if (!name || !email || !message) {
+    //return res.status(400).json({ error: "All fields are required" });
+ // }
+
+ // console.log("📩 New Contact Message:", req.body);
+ // res.json({ success: "Message received successfully!" });
+//});
+
+// ✅ Start Server
 app.listen(PORT, () => {
   console.log(`🚀 Server is running on http://localhost:${PORT}`);
 });

@@ -33,27 +33,33 @@ const Contact = () => {
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Retrieve existing messages from localStorage
+    
+    // Log the form data to the console
+    console.log("📩 Contact Form Data:", formData);
+  
+    // Save to localStorage
     const messages = JSON.parse(localStorage.getItem("messages")) || [];
-
-    // Save the new message
     messages.push(formData);
     localStorage.setItem("messages", JSON.stringify(messages));
-
-    // Reset form and show success message
+  
+    // Reset form & show success message
     setFormData({ name: "", email: "", message: "" });
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 3000);
   };
+  
 
   return (
-    <div className={`flex items-center justify-center min-h-screen p-4 transition-all ${
-      darkMode ? "bg-gray-900 text-white" : "bg-gray-200 text-gray-900"
-    }`}>
-      <div className={`p-8 rounded-2xl shadow-xl max-w-md w-full text-center ${
-        darkMode ? "bg-gray-800" : "bg-gray-100"
-      }`}>
+    <div
+      className={`flex items-center justify-center min-h-screen p-4 transition-all ${
+        darkMode ? "bg-gray-900 text-white" : "bg-gray-300 text-gray-900"
+      }`}
+    >
+      <div
+        className={`p-8 rounded-2xl shadow-xl max-w-md w-full text-center ${
+          darkMode ? "bg-gray-800" : "bg-gray-100"
+        }`}
+      >
         <h2 className="text-3xl font-bold mb-6">Contact Us</h2>
 
         {submitted && (
