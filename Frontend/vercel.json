@@ -9,13 +9,14 @@
         }
       }
     ],
+    "installCommand": "cd Frontend && npm install",
+    "buildCommand": "cd Frontend && npm run build",
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "/index.html"
+        "dest": "/Frontend/dist/index.html"
       }
     ]
   }
-  
   
   
