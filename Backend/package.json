@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js",
+    "start": "node index.js",
     "server": "nodemon index.js",
     "client": "npm start --prefix ./Frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\""
