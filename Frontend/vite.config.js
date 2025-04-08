@@ -3,18 +3,26 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
+  base: "/", // Important for correct routing on Vercel
+
   server: {
-    host: 'localhost', 
-    port: 5173, 
-    strictPort: true, 
+    host: 'localhost',
+    port: 5173,
+    strictPort: true,
     open: true,
     proxy: {
-      "/book": { // Proxy requests to backend
+      "/book": {
         target: "http://localhost:4000",
         changeOrigin: true,
         secure: false,
       }
     }
+  },
+
+  build: {
+    outDir: "dist",
+    emptyOutDir: true,
   }
 });
+
 
