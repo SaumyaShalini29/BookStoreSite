@@ -12,9 +12,10 @@
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "/Frontend/dist/index.html"
+        "dest": "/index.html"
       }
     ]
   }
+  
   
   
