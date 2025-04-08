@@ -1,21 +1,7 @@
-import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const About = () => {
   const navigate = useNavigate();
-  const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem("darkMode") === "true";
-  });
-
-  // Apply dark mode class to body when toggled
-  useEffect(() => {
-    if (darkMode) {
-      document.body.classList.add("dark");
-    } else {
-      document.body.classList.remove("dark");
-    }
-    localStorage.setItem("darkMode", darkMode);
-  }, [darkMode]);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-6 bg-gray-300 transition-all">
@@ -30,14 +16,6 @@ const About = () => {
         <p className="text-lg mb-6 leading-relaxed text-gray-600">
           Join us and dive into a world of knowledge and imagination. Enjoy unlimited reading without any cost!
         </p>
-
-        {/* Dark Mode Toggle Button */}
-        <button
-          onClick={() => setDarkMode(!darkMode)}
-          className="mt-4 w-full bg-gray-800 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-700 transition"
-        >
-          {darkMode ? "Light Mode 🌞" : "Dark Mode 🌙"}
-        </button>
 
         <div className="flex space-x-4 justify-center mt-4">
           <button
